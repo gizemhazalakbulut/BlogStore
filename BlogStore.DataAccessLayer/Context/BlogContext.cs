@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace BlogStore.DataAccessLayer.Context
 {
-    internal class BlogContext : DbContext
+    public class BlogContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=;initial catalog=BlogStoreNightDb;integrated Security=true;trust server certificate=true");
+            optionsBuilder.UseSqlServer("Server=GIZEM\\SQLEXPRESS;initial catalog=BlogStoreNightDb;integrated Security=true;trust server certificate=true");
         }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Article> Articles { get; set; }
@@ -21,3 +21,4 @@ namespace BlogStore.DataAccessLayer.Context
 
     }
 }
+// Veritabanı bağlantımızı ve tablolarımızı tanımladık.

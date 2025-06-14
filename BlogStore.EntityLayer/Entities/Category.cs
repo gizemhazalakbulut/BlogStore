@@ -10,6 +10,6 @@ namespace BlogStore.EntityLayer.Entities
     {
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
-        public List<Article> Articles { get; set; }
+        public List<Article> Articles { get; set; }  // Bu kategoriye ait makaleler listesi
     }
 }

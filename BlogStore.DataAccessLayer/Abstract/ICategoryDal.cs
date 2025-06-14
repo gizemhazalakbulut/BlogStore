@@ -12,3 +12,4 @@ namespace BlogStore.DataAccessLayer.Abstract
 
     }
 }
+// kategori sınıfım için crud işlemlerini tek tek yazmaktan kurtulduk IGenericDal interface’inden kalıtım alarak crud işlemlerini yapabilirim.

@@ -16,3 +16,4 @@ namespace BlogStore.DataAccessLayer.Abstract
        
     }
 }
+// CRUD işlemlerini merkezileştirmek için generic bir interface oluşturduk.

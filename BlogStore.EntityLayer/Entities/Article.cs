@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BlogStore.EntityLayer.Entities;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,15 +8,23 @@ using System.Threading.Tasks;
 
 namespace BlogStore.EntityLayer.Entities
 {
-    public class Article
+    public class Article //makale
     {
-        public int ArticleId { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public string ImageUrl { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public int CategoryId { get; set; }
-        public Category Category { get; set; }
+        public int ArticleId { get; set; }           // Makalenin benzersiz ID'si
+        public string Title { get; set; }            // Başlık
+        public string Description { get; set; }      // Açıklama
+        public string ImageUrl { get; set; }         // Görsel linki
+        public DateTime CreatedDate { get; set; }    // Oluşturulma tarihi
 
+        public int CategoryId { get; set; }          // Bu makalenin ait olduğu kategori ID'si (foreign key)
+        public Category Category { get; set; }       // Navigation property (ilişkili Category nesnesi)
     }
+
 }
+
+//| Yapı                 | Açıklama                                               |
+//| -------------------- | ------------------------------------------------------ |
+//| `Article.CategoryId` | Foreign Key(ilişkili kategori ID’si) |
+//| `Article.Category`   | Navigation property(bir makalenin kategorisi) |
+//| `Category.Articles`  | Navigation property(kategoriye ait makaleler listesi) |
+

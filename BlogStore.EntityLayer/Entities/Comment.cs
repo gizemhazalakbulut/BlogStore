@@ -12,7 +12,7 @@ namespace BlogStore.EntityLayer.Entities
         public string UserNameSurname { get; set; }
         public DateTime CommentDate { get; set; }
         public string CommentDetail { get; set; }
-        public bool IsValid { get; set; } //Onaylanmış demek olabilir
+        public bool IsValid { get; set; } //Onaylanmış demek olabilir. Onaylanmamış yorumları göstermeyelim diye mesela hakaret içeren bir yorum yapıldıysa
 
     }
 }
