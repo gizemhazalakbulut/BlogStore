@@ -9,6 +9,7 @@ namespace BlogStore.DataAccessLayer.Abstract
 {
     public interface IArticleDal : IGenericDal<Article>
     {
+        List<Article> GetArticlesWithCategories(); // Kategorilerle birlikte makaleleri getiren özel bir metot
     }
 }
 // Article sınıfım için crud işlemlerini tek tek yazmaktan kurtulduk. IGenericDal interface’inden kalıtım alarak crud işlemlerini yapabilirim.
