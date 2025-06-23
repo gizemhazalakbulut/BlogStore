@@ -19,6 +19,11 @@ namespace BlogStore.DataAccessLayer.EntityFramework
         {
             _context = context;
         }
+
+        public List<Comment> GetCommentsByArticle(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 // base(context) ifadesi; EfCommentDal'ın miras aldığı GenericRepository<Comment> sınıfının constructor'ını çalıştırır. Ona context parametresini aktarır.

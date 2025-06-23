@@ -14,5 +14,10 @@ namespace BlogStore.EntityLayer.Entities
         public string CommentDetail { get; set; }
         public bool IsValid { get; set; } //Onaylanmış demek olabilir. Onaylanmamış yorumları göstermeyelim diye mesela hakaret içeren bir yorum yapıldıysa
 
+        public string AppUserId { get; set; }
+        public AppUser AppUser { get; set; } //AppUser ile ilişkilendiriyoruz. Bir kullanıcı birden fazla yorum yapabilir. Yani 1'e çok ilişki var.
+        public int ArticleId { get; set; }
+        public Article Article { get; set; } //Article ile ilişkilendiriyoruz. Bir makale birden fazla yorum alabilir. Yani 1'e çok ilişki var.
+
     }
 }
