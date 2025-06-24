@@ -29,6 +29,11 @@ namespace BlogStore.BusinessLayer.Concrete
             return _articleDal.GetAll();
         }
 
+        public AppUser TGetAppUserByArticleId(int id)
+        {
+           return _articleDal.GetAppUserByArticleId(id);
+        }
+
         public List<Article> TGetArticlesWithCategories()
         {
             return _articleDal.GetArticlesWithCategories();
@@ -37,6 +42,11 @@ namespace BlogStore.BusinessLayer.Concrete
         public Article TGetById(int id)
         {
             return _articleDal.GetById(id);
+        }
+
+        public List<Article> TGetTop3PopularArticles()
+        {
+            return _articleDal.GetTop3PopularArticles();
         }
 
         public void TInsert(Article entity)

@@ -22,7 +22,8 @@ namespace BlogStore.DataAccessLayer.EntityFramework
 
         public List<Comment> GetCommentsByArticle(int id)
         {
-            throw new NotImplementedException();
+            var values = _context.Comments.Include(x=>x.AppUser).Include(y=>y.Article).Where(x => x.ArticleId == id).ToList();
+            return values;
         }
     }
 }
