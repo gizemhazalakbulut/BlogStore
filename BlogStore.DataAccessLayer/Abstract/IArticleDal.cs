@@ -14,6 +14,8 @@ namespace BlogStore.DataAccessLayer.Abstract
         public AppUser GetAppUserByArticleId(int id);
 
         List<Article> GetTop3PopularArticles(); // En popüler 3 makaleyi getiren özel bir metot
+
+        List<Article> GetArticlesByAppUser(string id);
     }
 }
 // Article sınıfım için crud işlemlerini tek tek yazmaktan kurtulduk. IGenericDal interface’inden kalıtım alarak crud işlemlerini yapabilirim.

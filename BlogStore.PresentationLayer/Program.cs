@@ -40,6 +40,8 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseRouting();
 
+app.UseAuthentication(); // bunu ekledim. Authentication middleware'ýný ekledik, böylece kimlik doðrulama iþlemleri yapýlabilir.
+
 app.UseAuthorization();
 
 app.MapStaticAssets();

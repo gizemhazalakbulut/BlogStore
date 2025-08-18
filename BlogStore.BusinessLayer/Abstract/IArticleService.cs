@@ -14,5 +14,7 @@ namespace BlogStore.BusinessLayer.Abstract
         public AppUser TGetAppUserByArticleId(int id); // Makale ID'sine göre AppUser'ı getiren özel bir metot
 
         public List<Article> TGetTop3PopularArticles(); // En popüler 3 makaleyi getiren özel bir metot
+
+        public List<Article> TGetArticlesByAppUser(string id);
     }
 }
