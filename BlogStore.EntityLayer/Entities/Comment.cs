@@ -19,5 +19,9 @@ namespace BlogStore.EntityLayer.Entities
         public int ArticleId { get; set; }
         public Article Article { get; set; } //Article ile ilişkilendiriyoruz. Bir makale birden fazla yorum alabilir. Yani 1'e çok ilişki var.
 
+        public bool IsToxic { get; set; }
+
+        public float ToxicityScore { get; set; }
+
     }
 }

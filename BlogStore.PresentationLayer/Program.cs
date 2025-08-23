@@ -1,31 +1,27 @@
 using BlogStore.BusinessLayer.Abstract;
 using BlogStore.BusinessLayer.Concrete;
+using BlogStore.BusinessLayer.Container;
 using BlogStore.DataAccessLayer.Abstract;
 using BlogStore.DataAccessLayer.Context;
 using BlogStore.DataAccessLayer.EntityFramework;
 using BlogStore.EntityLayer.Entities;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using System.Transactions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddControllersWithViews();
 
-builder.Services.AddScoped<ICategoryService, CategoryManager>();
-builder.Services.AddScoped<ICategoryDal, EfCategoryDal>();
+builder.Services.ContainerDependencies();
 
-builder.Services.AddScoped<ICommentService, CommentManager>();
-builder.Services.AddScoped<ICommentDal, EfCommentDal>();
-
-builder.Services.AddScoped<IArticleService, ArticleManager>();
-builder.Services.AddScoped<IArticleDal, EfArticleDal>();
-
-builder.Services.AddDbContext<BlogContext>();
-
+// Aþaðýdakiler WEB projesinde:
+builder.Services.AddDbContext<BlogContext>(); 
 builder.Services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<BlogContext>();
 
-
-
-builder.Services.AddControllersWithViews();
+builder.Services.AddHttpClient<IToxicityDetectionService, ToxicityManager>();
+builder.Services.AddHttpClient<ITranslationService, TranslationManager>();
 
 var app = builder.Build();
 
@@ -45,6 +41,11 @@ app.UseAuthentication(); // bunu ekledim. Authentication middleware'ýný ekledik,
 app.UseAuthorization();
 
 app.MapStaticAssets();
+
+app.MapControllerRoute(
+    name: "articleDetail",
+    pattern: "Article/ArticleDetail/{slug}",
+    defaults: new { controller = "Article", action = "ArticleDetail" });
 
 app.MapControllerRoute(
     name: "default",

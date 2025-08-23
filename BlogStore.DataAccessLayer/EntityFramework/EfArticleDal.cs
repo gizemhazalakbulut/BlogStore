@@ -26,14 +26,46 @@ namespace BlogStore.DataAccessLayer.EntityFramework
             return userValue;
         }
 
+        public Article GetArticleBySlug(string slug)
+        {
+            return _context.Articles
+                .Include(x => x.Category)
+                .Include(x => x.AppUser)
+                .FirstOrDefault(x => x.Slug == slug);
+        }
+
         public List<Article> GetArticlesByAppUser(string id)
         {
             return _context.Articles.Where(x=>x.AppUserId ==id).ToList();
         }
 
+        public List<Article> GetArticlesByCategoryId(int id)
+        {
+            return _context.Articles.Include(x =>x.Category).Include(x =>x.AppUser).Where(x=>x.CategoryId ==id).ToList();
+        }
+
+        public List<Article> GetArticlesByUserId(string id)
+        {
+            return _context.Articles
+       .Include(x => x.AppUser)
+       .Include(x => x.Category)
+       .Where(x => x.AppUserId == id)
+       .OrderByDescending(x => x.CreatedDate)
+       .ToList();
+        }
+
+        
+
         public List<Article> GetArticlesWithCategories()
         {
             return _context.Articles.Include(x =>x.Category).ToList();
+        }
+
+        public Article GetArticleWithUser(int id)
+        {
+            return _context.Articles
+                .Include(x => x.AppUser)
+                .FirstOrDefault(x => x.ArticleId == id);
         }
 
         public List<Article> GetTop3PopularArticles()

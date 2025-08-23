@@ -18,6 +18,8 @@ namespace BlogStore.BusinessLayer.Concrete
             _articleDal = articleDal;
         }
 
+     
+
         public void TDelete(int id)
         {
             _articleDal.Delete(id);
@@ -34,14 +36,34 @@ namespace BlogStore.BusinessLayer.Concrete
            return _articleDal.GetAppUserByArticleId(id);
         }
 
+        public Article TGetArticleBySlug(string slug)
+        {
+            return _articleDal.GetArticleBySlug(slug);
+        }
+
         public List<Article> TGetArticlesByAppUser(string id)
         {
             return _articleDal.GetArticlesByAppUser(id);
         }
 
+        public List<Article> TGetArticlesByCategoryId(int id)
+        {
+            return _articleDal.GetArticlesByCategoryId(id);
+        }
+
+        public List<Article> TGetArticlesByUserId(string id)
+        {
+           return _articleDal.GetArticlesByUserId(id);
+        }
+
         public List<Article> TGetArticlesWithCategories()
         {
             return _articleDal.GetArticlesWithCategories();
+        }
+
+        public Article TGetArticleWithUser(int id)
+        {
+            return _articleDal.GetArticleWithUser(id);
         }
 
         public Article TGetById(int id)

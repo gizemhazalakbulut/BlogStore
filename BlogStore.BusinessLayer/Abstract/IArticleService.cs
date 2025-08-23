@@ -16,5 +16,13 @@ namespace BlogStore.BusinessLayer.Abstract
         public List<Article> TGetTop3PopularArticles(); // En popüler 3 makaleyi getiren özel bir metot
 
         public List<Article> TGetArticlesByAppUser(string id);
+
+        public List<Article> TGetArticlesByCategoryId(int id);
+
+        public Article TGetArticleBySlug(string slug);
+
+        public Article TGetArticleWithUser(int id);
+
+        public List<Article> TGetArticlesByUserId(string id);
     }
 }

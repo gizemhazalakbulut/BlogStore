@@ -21,6 +21,8 @@ namespace BlogStore.EntityLayer.Entities
         public AppUser AppUser { get; set; }        // Navigation property (ilişkili AppUser nesnesi)
 
         public List<Comment> Comments { get; set; }  // Bu makaleye ait yorumlar listesi
+
+        public string Slug { get; set; }
     }
 
 }
