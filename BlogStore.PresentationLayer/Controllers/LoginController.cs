@@ -1,5 +1,6 @@
 ﻿using BlogStore.EntityLayer.Entities;
 using BlogStore.PresentationLayer.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -28,6 +29,16 @@ namespace BlogStore.PresentationLayer.Controllers
             }
             return View();
            
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Authorize]
+        public async Task<IActionResult> LogOut()
+        {
+            await _signInManager.SignOutAsync();
+            TempData["SuccessMessage"] = "Oturum kapatıldı.";
+            return RedirectToAction("UserLogin", "Login");
         }
     }
 }

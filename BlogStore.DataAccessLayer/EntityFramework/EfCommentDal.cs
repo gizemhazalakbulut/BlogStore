@@ -25,6 +25,18 @@ namespace BlogStore.DataAccessLayer.EntityFramework
             var values = _context.Comments.Include(x=>x.AppUser).Include(y=>y.Article).Where(x => x.ArticleId == id).ToList();
             return values;
         }
+
+        public List<Comment> GetLast5CommentsByArticle(string id)
+        {
+            var values = _context.Comments
+                .Include(x => x.AppUser)
+                .Include(y => y.Article)
+                .Where(x => x.Article.AppUserId == id)
+                .OrderByDescending(x => x.CommentDate)
+                .Take(5)
+                .ToList();
+            return values;
+        }
     }
 }
 // base(context) ifadesi; EfCommentDal'ın miras aldığı GenericRepository<Comment> sınıfının constructor'ını çalıştırır. Ona context parametresini aktarır.

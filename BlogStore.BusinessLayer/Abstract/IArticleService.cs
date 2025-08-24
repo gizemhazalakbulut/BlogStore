@@ -24,5 +24,9 @@ namespace BlogStore.BusinessLayer.Abstract
         public Article TGetArticleWithUser(int id);
 
         public List<Article> TGetArticlesByUserId(string id);
+
+        List<(string CategoryName, int ArticleCount)> TGetArticleCountByCategory();
+
+        List<Article> TGetLast5ArticlesByUser(string id);
     }
 }

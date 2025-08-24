@@ -41,6 +41,11 @@ namespace BlogStore.BusinessLayer.Concrete
             return _articleDal.GetArticleBySlug(slug);
         }
 
+        public List<(string CategoryName, int ArticleCount)> TGetArticleCountByCategory()
+        {
+            return _articleDal.GetArticleCountByCategory();
+        }
+
         public List<Article> TGetArticlesByAppUser(string id)
         {
             return _articleDal.GetArticlesByAppUser(id);
@@ -69,6 +74,11 @@ namespace BlogStore.BusinessLayer.Concrete
         public Article TGetById(int id)
         {
             return _articleDal.GetById(id);
+        }
+
+        public List<Article> TGetLast5ArticlesByUser(string id)
+        {
+            return _articleDal.GetLast5ArticlesByUser(id);  
         }
 
         public List<Article> TGetTop3PopularArticles()

@@ -10,5 +10,6 @@ namespace BlogStore.BusinessLayer.Abstract
     public interface ICommentService : IGenericService<Comment>
     {
        public List<Comment> TGetCommentsByArticle(int id);
+        List<Comment> TGetLast5CommentsByArticle(string id);
     }
 }

@@ -10,6 +10,7 @@ namespace BlogStore.DataAccessLayer.Abstract
     public interface ICommentDal : IGenericDal<Comment>
     {
         List<Comment> GetCommentsByArticle(int id);
+        List<Comment> GetLast5CommentsByArticle(string id);
     }
 }
 // Comment sınıfım için crud işlemlerini tek tek yazmaktan kurtulduk. IGenericDal interface’inden kalıtım alarak crud işlemlerini yapabilirim.

@@ -34,6 +34,20 @@ namespace BlogStore.DataAccessLayer.EntityFramework
                 .FirstOrDefault(x => x.Slug == slug);
         }
 
+        public List<(string CategoryName, int ArticleCount)> GetArticleCountByCategory()
+        {
+            var result = _context.Articles
+           .Include(a => a.Category)
+           .GroupBy(a => a.Category.CategoryName)
+           .Select(g => new ValueTuple<string, int>(
+               g.Key,
+               g.Count()
+           ))
+           .ToList();
+
+            return result;
+        }
+
         public List<Article> GetArticlesByAppUser(string id)
         {
             return _context.Articles.Where(x=>x.AppUserId ==id).ToList();
@@ -67,6 +81,16 @@ namespace BlogStore.DataAccessLayer.EntityFramework
                 .Include(x => x.AppUser)
                 .FirstOrDefault(x => x.ArticleId == id);
         }
+
+        public List<Article> GetLast5ArticlesByUser(string id)
+        {
+            return _context.Articles
+   .Where(a => a.AppUserId == id)
+   .OrderByDescending(a => a.CreatedDate)
+   .Take(5)
+   .ToList();
+        }
+        
 
         public List<Article> GetTop3PopularArticles()
         {

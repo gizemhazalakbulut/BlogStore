@@ -24,6 +24,10 @@ namespace BlogStore.DataAccessLayer.Abstract
         public Article GetArticleBySlug(string slug);
 
         public Article GetArticleWithUser(int id);
+
+        List<(string CategoryName, int ArticleCount)> GetArticleCountByCategory();
+
+        List<Article> GetLast5ArticlesByUser(string id);
     }
 }
 // Article sınıfım için crud işlemlerini tek tek yazmaktan kurtulduk. IGenericDal interface’inden kalıtım alarak crud işlemlerini yapabilirim.
