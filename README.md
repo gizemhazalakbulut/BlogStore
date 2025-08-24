@@ -97,9 +97,32 @@ Toksik/zararlı yorumları engellemek için bir **analiz hattı** çalışır:
 - *(Opsiyonel)* **Chart.js** — yönetim grafikleri  
 - *(Opsiyonel)* **Python + Transformers** — ToxicBERT & Helsinki çeviri
 
-## 🧰 Görseller
+## Görseller
 
 <img width="1863" height="915" alt="anasayfa" src="https://github.com/user-attachments/assets/6e343d81-cba6-4f93-8218-0e83bfea3833" />
 
+<img width="1796" height="836" alt="kategoriler" src="https://github.com/user-attachments/assets/fa1f73a4-af35-4aba-aa85-6078b7515be3" />
 
+<img width="1503" height="903" alt="yazarlar" src="https://github.com/user-attachments/assets/4bb3edb4-b253-4064-863f-53f3ecd88b33" />
 
+<img width="1858" height="914" alt="makale detay" src="https://github.com/user-attachments/assets/a6c17d3e-78a8-41e7-9d53-cbe805452fab" />
+
+<img width="1496" height="911" alt="detay" src="https://github.com/user-attachments/assets/38526be9-ecb4-4553-802e-1bf24cfca17f" />
+
+<img width="1551" height="924" alt="yorum yap yok" src="https://github.com/user-attachments/assets/084e1a31-b4b5-40a7-9254-867f321ed5de" />
+
+<img width="1202" height="544" alt="başarılı yorum" src="https://github.com/user-attachments/assets/1e8c608d-3d86-4c3b-ab4b-044aad4aad75" />
+
+<img width="1881" height="907" alt="toksik yorum" src="https://github.com/user-attachments/assets/1fdda72b-204e-4ea2-a4ad-863533bbaa03" />
+
+<img width="1113" height="867" alt="giriş yap" src="https://github.com/user-attachments/assets/9c6b6a82-c065-4549-8018-25e40e8cb2af" />
+
+<img width="595" height="615" alt="kayıt ol" src="https://github.com/user-attachments/assets/986ae7fe-f584-4fe7-a3a3-cef536b373a1" />
+
+<img width="1887" height="910" alt="dashboard" src="https://github.com/user-attachments/assets/7fd20ded-4306-4a13-a578-0cf6ad30ba53" />
+
+<img width="1889" height="916" alt="makale listem" src="https://github.com/user-attachments/assets/b6dadee2-ddeb-4491-b361-ed5871a456d8" />
+
+<img width="1891" height="868" alt="yeni makale" src="https://github.com/user-attachments/assets/1a569d7e-32ac-462f-bb8a-164d307ced02" />
+
+<img width="1887" height="860" alt="profil güncelleme" src="https://github.com/user-attachments/assets/6cc13873-3efd-44bc-97fc-dc8d9766aace" />
