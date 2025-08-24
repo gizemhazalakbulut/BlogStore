@@ -97,4 +97,9 @@ Toksik/zararlı yorumları engellemek için bir **analiz hattı** çalışır:
 - *(Opsiyonel)* **Chart.js** — yönetim grafikleri  
 - *(Opsiyonel)* **Python + Transformers** — ToxicBERT & Helsinki çeviri
 
+## 🧰 Görseller
+
+<img width="1863" height="915" alt="anasayfa" src="https://github.com/user-attachments/assets/6e343d81-cba6-4f93-8218-0e83bfea3833" />
+
+
 
